@@ -4,8 +4,8 @@ function Player(name,token, numbers) {
   this.token = token;
   this.numbers = numbers;
 }
-xPlayer = new Player("Player X", "X", []);
-oPlayer = new Player("Player O", "O", []);
+xPlayer = new Player("x", "X", []);
+oPlayer = new Player("o", "O", []);
 
 var winRow = [[1,2,3], [4,5,6], [7,8,9]];
 var winCol= [[1,4,7], [2,5,8], [3,6,9]];
@@ -32,6 +32,7 @@ assignSquare = function(param) {
     rowWinnerCheck(oPlayer);
     colWinnerCheck(oPlayer);
     diagWinnerCheck(oPlayer);
+
   }
 }
 rowWinnerCheck = function (Player) {
@@ -46,6 +47,8 @@ rowWinnerCheck = function (Player) {
       }
       if (win === 3){
         alert(Player.name + " you win!");
+        $("td button").hide();
+        $(".clickable").addClass(Player.name + "Square");
       }
       }
     }
@@ -64,6 +67,8 @@ colWinnerCheck = function (Player) {
       }
       if (win === 3){
         alert(Player.name + " you win!");
+        $("td button").hide();
+        $(".clickable").addClass(Player.name + "Square");
       }
       }
     }
@@ -76,17 +81,23 @@ diagWinnerCheck = function (Player) {
     var win = 0
     for(var j=0; j <=2; j++) {
       for(var k = 0; k < myLength; k++) {
-      if (winDiag[i][j] === myNumbers[k]) {
-       win = win + 1;
-      }
-      if (win === 3){
-        alert(Player.name + " you win!");
-      }
+        if (winDiag[i][j] === myNumbers[k]) {
+         win = win + 1;
+        }
+        if (win === 3){
+          alert(Player.name + " you win!");
+          $("td button").hide();
+          $(".clickable").addClass(Player.name + "Square");
+        }
       }
     }
   }
 }
-
+tieTest = function(){
+  if ((xPlayer.numbers.length + oPlayer.numbers.length === 9) && (win < 3)){
+    alert("It's a tie!");
+  }
+}
 //UI logic
 $(document).ready(function(){
   $("td button").click(function(){
@@ -94,6 +105,8 @@ $(document).ready(function(){
     sqVal = parseInt($(this).val());
     $(this).hide();
     assignSquare();
+
+
   });
   $("#refresh").click(function(){
     event.preventDefault();
