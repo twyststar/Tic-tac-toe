@@ -20,16 +20,69 @@ assignSquare = function(param) {
   if (xLength === oLength) {
     xPlayer.numbers.push(sqVal);
     xLength += 1;
+    rowWinnerCheck(xPlayer);
+    colWinnerCheck(xPlayer);
+    diagWinnerCheck(xPlayer);
   } else {
     oPlayer.numbers.push(sqVal);
     oLength += 1;
+    rowWinnerCheck(oPlayer);
+    colWinnerCheck(oPlayer);
+    diagWinnerCheck(oPlayer);
   }
-  console.log(xPlayer.numbers + "  Xplay")
-  console.log(oPlayer.numbers + "  Oplay")
-  console.log(xNumbers);
+}
+rowWinnerCheck = function (Player) {
+  myLength = Player.numbers.length;
+  myNumbers = Player.numbers;
+  for(var i=0; i <= 2; i++) {
+    var win = 0
+    for(var j=0; j <=2; j++) {
+      for(var k = 0; k < myLength; k++) {
+      if (winRow[i][j] === myNumbers[k]) {
+       win = win + 1;
+      }
+      if (win === 3){
+        alert("you win");
+      }
+      }
+    }
+  }
 }
 
-
+colWinnerCheck = function (Player) {
+  myLength = Player.numbers.length;
+  myNumbers = Player.numbers;
+  for(var i=0; i <= 2; i++) {
+    var win = 0
+    for(var j=0; j <=2; j++) {
+      for(var k = 0; k < myLength; k++) {
+      if (winCol[i][j] === myNumbers[k]) {
+       win = win + 1;
+      }
+      if (win === 3){
+        alert("you win");
+      }
+      }
+    }
+  }
+}
+diagWinnerCheck = function (Player) {
+  myLength = Player.numbers.length;
+  myNumbers = Player.numbers;
+  for(var i=0; i <= 1; i++) {
+    var win = 0
+    for(var j=0; j <=2; j++) {
+      for(var k = 0; k < myLength; k++) {
+      if (winDiag[i][j] === myNumbers[k]) {
+       win = win + 1;
+      }
+      if (win === 3){
+        alert("you win");
+      }
+      }
+    }
+  }
+}
 
 //UI logic
 $(document).ready(function(){
