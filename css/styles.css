@@ -1,0 +1,19 @@
+
+table {
+
+  float: right;
+}
+td {
+  text-align: center;
+  height: 200px;
+  width: 200px;
+  border: 1px solid black;
+}
+
+.clickable {
+  cursor: pointer;
+}
+td button {
+  height: 100%;
+  width: 100%;
+}
