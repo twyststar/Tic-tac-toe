@@ -1,10 +1,11 @@
 //business logic
-function Player(token, numbers) {
+function Player(name,token, numbers) {
+  this.name = name;
   this.token = token;
   this.numbers = numbers;
 }
-xPlayer = new Player("X", []);
-oPlayer = new Player("O", []);
+xPlayer = new Player("Player X", "X", []);
+oPlayer = new Player("Player O", "O", []);
 
 var winRow = [[1,2,3], [4,5,6], [7,8,9]];
 var winCol= [[1,4,7], [2,5,8], [3,6,9]];
@@ -20,12 +21,14 @@ assignSquare = function(param) {
   if (xLength === oLength) {
     xPlayer.numbers.push(sqVal);
     xLength += 1;
+    $("#sq" + sqVal).addClass("xSquare");
     rowWinnerCheck(xPlayer);
     colWinnerCheck(xPlayer);
     diagWinnerCheck(xPlayer);
   } else {
     oPlayer.numbers.push(sqVal);
     oLength += 1;
+    $("#sq" + sqVal).addClass("oSquare");
     rowWinnerCheck(oPlayer);
     colWinnerCheck(oPlayer);
     diagWinnerCheck(oPlayer);
@@ -42,7 +45,7 @@ rowWinnerCheck = function (Player) {
        win = win + 1;
       }
       if (win === 3){
-        alert("you win");
+        alert(Player.name + " you win!");
       }
       }
     }
@@ -60,7 +63,7 @@ colWinnerCheck = function (Player) {
        win = win + 1;
       }
       if (win === 3){
-        alert("you win");
+        alert(Player.name + " you win!");
       }
       }
     }
@@ -77,7 +80,7 @@ diagWinnerCheck = function (Player) {
        win = win + 1;
       }
       if (win === 3){
-        alert("you win");
+        alert(Player.name + " you win!");
       }
       }
     }
@@ -86,14 +89,14 @@ diagWinnerCheck = function (Player) {
 
 //UI logic
 $(document).ready(function(){
-  $("button").click(function(){
+  $("td button").click(function(){
     event.preventDefault();
     sqVal = parseInt($(this).val());
     $(this).hide();
-    // XPlayer.numbers.push(sqVal);
     assignSquare();
-
-    // console.log(XPlayer.numbers);
-
+  });
+  $("#refresh").click(function(){
+    event.preventDefault();
+    location.reload();
   });
 });
