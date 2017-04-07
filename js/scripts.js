@@ -48,7 +48,8 @@ rowWinnerCheck = function (Player) {
       if (win === 3){
         alert(Player.name + " you win!");
         $("td button").hide();
-        $(".clickable").addClass(Player.name + "Square");
+        $(".clickable").removeClass();
+        $("td").addClass(Player.name + "Square");
       }
       }
     }
@@ -68,7 +69,8 @@ colWinnerCheck = function (Player) {
       if (win === 3){
         alert(Player.name + " you win!");
         $("td button").hide();
-        $(".clickable").addClass(Player.name + "Square");
+        $(".clickable").removeClass();
+        $("td").addClass(Player.name + "Square");
       }
       }
     }
@@ -87,7 +89,8 @@ diagWinnerCheck = function (Player) {
         if (win === 3){
           alert(Player.name + " you win!");
           $("td button").hide();
-          $(".clickable").addClass(Player.name + "Square");
+          $(".clickable").removeClass();
+          $("td").addClass(Player.name + "Square");
         }
       }
     }

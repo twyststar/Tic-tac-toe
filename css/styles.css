@@ -12,18 +12,10 @@ p {
   font-weight: bold;
   font-size: 30px;
 }
-.clickable {
-  cursor: pointer;
-}
+
 td button {
   height: 100%;
   width: 100%;
-}
-.xSquare {
-  background-color: #8faa98;
-  background-image: url(../img/x.png);
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 .oSquare {
   background-color: #85a2d1;
@@ -31,7 +23,16 @@ td button {
   background-size: contain;
   background-repeat: no-repeat;
 }
+.xSquare {
+  background-color: #8faa98;
+  background-image: url(../img/x.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 #refresh {
   clear: both;
   margin-top: 250px;
 }
+.clickable {
+  cursor: pointer;
