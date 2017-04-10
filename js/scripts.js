@@ -25,6 +25,7 @@ assignSquare = function(param) {
     rowWinnerCheck(xPlayer);
     colWinnerCheck(xPlayer);
     diagWinnerCheck(xPlayer);
+
   } else {
     oPlayer.numbers.push(sqVal);
     oLength += 1;
@@ -50,6 +51,7 @@ rowWinnerCheck = function (Player) {
         $("td button").hide();
         $(".clickable").removeClass();
         $("td").addClass(Player.name + "Square");
+        return win;
       }
       }
     }
@@ -71,6 +73,7 @@ colWinnerCheck = function (Player) {
         $("td button").hide();
         $(".clickable").removeClass();
         $("td").addClass(Player.name + "Square");
+        return win;
       }
       }
     }
@@ -91,13 +94,15 @@ diagWinnerCheck = function (Player) {
           $("td button").hide();
           $(".clickable").removeClass();
           $("td").addClass(Player.name + "Square");
+          return win;
         }
       }
     }
   }
+  tieTest();
 }
-tieTest = function(){
-  if ((xPlayer.numbers.length + oPlayer.numbers.length === 9) && (win < 3)){
+tieTest = function(Player){
+  if (xPlayer.numbers.length + oPlayer.numbers.length === 9){
     alert("It's a tie!");
   }
 }
