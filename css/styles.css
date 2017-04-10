@@ -1,4 +1,6 @@
-
+body {
+  background-image: url(../img/skulls.jpg);
+}
 table {
   float: right;
 }
@@ -12,10 +14,21 @@ p {
   font-weight: bold;
   font-size: 30px;
 }
-
+.jumbotron h1 {
+  color: white;
+}
+.jumbotron {
+  text-align: center;
+  background-image: url(../img/cast.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 td button {
   height: 100%;
   width: 100%;
+  background-image: url(../img/irkin.png);
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .GirSquare{
   background-color: #65edc9;
@@ -25,13 +38,13 @@ td button {
 }
 
 .DibSquare {
-  background-color: #85a2d1;
+  background-color: #65a9c6;
   background-image: url(../img/dib.png);
   background-size: contain;
   background-repeat: no-repeat;
 }
 .ZimSquare {
-  background-color: #8faa98;
+  background-color: #be76db;
   background-image: url(../img/zim.png);
   background-size: contain;
   background-repeat: no-repeat;

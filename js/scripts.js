@@ -4,7 +4,7 @@ function Player(name,token, numbers) {
   this.token = token;
   this.numbers = numbers;
 }
-xPlayer = new Player("Gir", "X", []);
+xPlayer = new Player("Zim", "X", []);
 oPlayer = new Player("Dib", "O", []);
 cPlayer = new Player("Gir", "C", []);
 
