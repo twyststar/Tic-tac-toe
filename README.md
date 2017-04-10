@@ -9,7 +9,7 @@
 _A two player game of Tic Tac Toe playable in the browser._
 
 ## Setup/Installation Requirements
-
+* _https://twyststar.github.io/Tic-tac-toe_
 * _Clone this repository to desktop_
 * _Open index.html in browser_
 
